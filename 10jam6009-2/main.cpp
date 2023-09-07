@@ -168,11 +168,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	char keys[256] = {0};
 	char preKeys[256] = {0};
 
-	int title = Novice::LoadTexture("./images/TITLE.png");
 	int player = Novice::LoadTexture("./images/player.png");
-
-	int gameClear = Novice::LoadTexture("./images/GAMECLEARR.png");
-	int gameOver = Novice::LoadTexture("./images/GAMEOVERR.png");
 
 	MapClass mapClass;
 
@@ -929,7 +925,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		switch (sceneNo)
 		{
 		case TITLE:
-			Novice::DrawSprite(0, 0, title, 2, 2, 0, WHITE);
+			mapClass.DrawTitle();
 			break;
 		case STAGE1:
 			//数値見やすく--------------------------------------------------------------
@@ -942,7 +938,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 			Novice::DrawBox(0, 0, 1280, 720, 0, BLACK, kFillModeSolid);
 
-			mapClass.DrawStage();
+			mapClass.DrawStage1();
+
 			Novice::DrawSprite(playerPosX, playerPosY, player, 1, 1, 0, WHITE);
 
 			break;
@@ -1036,23 +1033,23 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			break;*/
 
 		case GAMECLEAR:
-			Novice::DrawSprite(0, 0, gameClear, 2, 2, 0, WHITE);
+			mapClass.DrawGameClear();
 			break;
 
 		case GAMECLEAR2:
-			Novice::DrawSprite(0, 0, gameClear, 2, 2, 0, WHITE);
+			mapClass.DrawGameClear();
 			break;
 
 		case GAMECLEAR3:
-			Novice::DrawSprite(0, 0, gameClear, 2, 2, 0, WHITE);
+			mapClass.DrawGameClear();
 			break;
 
 		case GAMEOVER2:
-			Novice::DrawSprite(0, 0, gameOver, 2, 2, 0, WHITE);
+			mapClass.DrawGameOver();
 			break;
 
 		case GAMEOVER:
-			Novice::DrawSprite(0, 0, gameOver, 2, 2, 0, WHITE);
+			mapClass.DrawGameOver();
 			break;
 
 		}

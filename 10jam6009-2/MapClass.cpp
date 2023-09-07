@@ -28,6 +28,10 @@ void MapClass::Initialize()
 	candy = Novice::LoadTexture("./images/CANDY.png");
 	caramel = Novice::LoadTexture("./images/CARAMEL.png");
 	MANUAL = Novice::LoadTexture("./images/MANUALS.png");
+
+	title = Novice::LoadTexture("./images/TITLE.png");
+	gameClear = Novice::LoadTexture("./images/GAMECLEARR.png");
+	gameOver = Novice::LoadTexture("./images/GAMEOVERR.png");
 }
 
 void MapClass::Update()
@@ -50,7 +54,7 @@ void MapClass::stage1()
 	}
 }
 
-void MapClass::DrawStage()
+void MapClass::DrawStage1()
 {
 	for (int y = 0; y < mapCountY; y++)
 	{
@@ -93,4 +97,19 @@ void MapClass::DrawStage()
 		}
 	}
 	
+}
+
+void MapClass::DrawTitle()
+{
+	Novice::DrawSprite(0, 0, title, 2, 2, 0, WHITE);
+}
+
+void MapClass::DrawGameClear()
+{
+	Novice::DrawSprite(0, 0, gameClear, 2, 2, 0, WHITE);
+}
+
+void MapClass::DrawGameOver()
+{
+	Novice::DrawSprite(0, 0, gameOver, 2, 2, 0, WHITE);
 }

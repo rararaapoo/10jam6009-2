@@ -22,7 +22,13 @@ public:
 
 	void stage1();
 
-	void DrawStage();
+	void DrawStage1();
+
+	void DrawTitle();
+
+	void DrawGameClear();
+
+	void DrawGameOver();
 
 	// 第一ステージ
 	int map[20][27] = {
@@ -93,5 +99,9 @@ private:
 	int	candy;
 	int	caramel;
 	int MANUAL;
+
+	int title;
+	int gameClear;
+	int gameOver;
 };
 
