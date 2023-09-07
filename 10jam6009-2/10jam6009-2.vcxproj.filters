@@ -35,7 +35,7 @@
     <ClCompile Include="C:\KamataEngine\DirectXGame\2d\ImGuiManager.cpp">
       <Filter>KamataEngine</Filter>
     </ClCompile>
-    <ClCompile Include="map.cpp">
+    <ClCompile Include="MapClass.cpp">
       <Filter>KamataEngine</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
@@ -111,7 +111,7 @@
     <ClInclude Include="C:\KamataEngine\DirectXGame\math\Vector3.h" />
     <ClInclude Include="C:\KamataEngine\DirectXGame\math\Vector4.h" />
     <ClInclude Include="C:\KamataEngine\DirectXGame\2d\ImGuiManager.h" />
-    <ClInclude Include="map.h" />
+    <ClInclude Include="MapClass.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
 </Project>
