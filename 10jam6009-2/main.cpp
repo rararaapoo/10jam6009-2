@@ -423,9 +423,40 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 					{
 						map[playerMapY][playerMapX] = YUKA;
 						map[playerMapY + 1][playerMapX] = SYRUP;
+						if (map[1][1] == THORN)
+						{
+							map[playerMapY][playerMapX] = THORN;
+							map[1][1] = YUKA;
+						}
 						playerPosY += playerSpeed;
 					}
 				}
+
+				/*if (map[playerMapY][playerMapX] == SYRUP)
+				{
+					if (map[playerMapY + 1][playerMapX] == YUKA && map[1][1] == THORN)
+					{
+						map[1][1] = YUKA;
+						map[playerMapY - 1][playerMapX] = THORN;
+						map[playerMapY][playerMapX] = YUKA;
+						map[playerMapY + 1][playerMapX] = SYRUP;
+						playerPosY += playerSpeed;
+					}
+				}*/
+
+				if (map[playerMapY][playerMapX] == SYRUP)
+				{
+					
+					if (map[playerMapY + 1][playerMapX] == THORN)
+					{
+						map[1][1] = THORN;
+						map[playerMapY][playerMapX] = YUKA;
+						map[playerMapY + 1][playerMapX] = SYRUP;
+						playerPosY += playerSpeed;
+					}
+				}
+
+			
 			}
 
 			//状態変化--------------------------------------------------------------------------------------------------
@@ -499,7 +530,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 				}
 			}
 
-			if (map[playerMapY][playerMapX] == THORN)
+			/*if (map[playerMapY][playerMapX] == THORN)
 			{
 				deathTimer--;
 				playerSpeed = 0;
@@ -507,7 +538,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 				{
 					sceneNo = GAMEOVER;
 				}
-			}
+			}*/
 			break;
 
 		case STAGE2:
