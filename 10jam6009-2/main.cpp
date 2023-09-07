@@ -1,5 +1,6 @@
 #include <Novice.h>
 #include "MapClass.h"
+#include "Player.h"
 
 const char kWindowTitle[] = "GC2B_07_マ_ドンウク";
 
@@ -24,26 +25,12 @@ int sceneNo = TITLE;
 
 
 //ブロックサイズの設定
-const int KBlockSize = 32;
-int playerPosX = 13 * KBlockSize;
-int playerPosY = 576;
-int playerR = 32;
-int playerSpeed = KBlockSize;
 
-int playerTmpX = 0;
-int playerTmpY = 0;
-int playerMapX = 0;
-int playerMapY = 0;
 
 //ステージ2
 /*int playerPosX = 13 * KBlockSize;
 int playerPosY = 320;*/
 
-
-//タイマー
-int goalTimer = 60;//ゴール
-int caramelTimer = 200;//カラメル
-int deathTimer = 60;//ゲームオーバー
 //フラグ-----------
 int caramelFlag = 0;
 
@@ -168,10 +155,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	char keys[256] = {0};
 	char preKeys[256] = {0};
 
-	int player = Novice::LoadTexture("./images/player.png");
-
 	MapClass mapClass;
-
+	Player playerClass;
 	mapClass.Initialize();
 	mapClass.stage1();
 
@@ -192,10 +177,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		{
 		case TITLE:
 			//初期化------------------------------------------------------------
-			goalTimer = 60;
-			deathTimer = 60;
-			playerPosY = 576;
-			playerSpeed = KBlockSize;
+
 			//--------------------------------------------------------------------
 			if (keys[DIK_SPACE] && preKeys[DIK_SPACE] == 0)
 			{
@@ -205,10 +187,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			break;
 
 		case STAGE1:
-			//マップ情報-----------------------------------------------------------------------------------
-			playerMapX = playerPosX / KBlockSize;//map[x][]
-			playerMapY = playerPosY / KBlockSize;//map[][y]
-
+			
+			playerClass.Update();
 			mapClass.Update();
 
 

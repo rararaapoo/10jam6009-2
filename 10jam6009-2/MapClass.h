@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include"Novice.h"
 
+
 enum MapInfo 
 {
 	YUKA,//0
